@@ -2,17 +2,184 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i');
 
-/* Presets */
+/* presets */
+body {
+  background-image: url("./images/random_grey_variations.png");
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  min-width: 320px;
+}
+
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+.photo-search,
+.search-button {
+  outline: none;
+  border: none;
+  border-style: none;
+}
+
+/* gallery */
+header {
+  background-color: rgba(0,0,0,.6);
+  height: 140px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px #111;
+  border-radius: 3px;
+}
+
+
+.home h1,
+.home p,
+.photo-list h3 {
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-shadow: 4px 4px 2px rgba(0,0,0, .3);
+}
+
+.home {
+  background-color: rgba(0,0,0,.6);
+  padding: 20px 0px;
+  box-shadow: 0 0 10px #111;
+  border-radius: 3px;
+  line-height: 0;
+}
+
+.home h1,
+.home p {
+  line-height: 0;
+}
+
+.home img {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.home h1 {
+  font-size: 1.5em;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 30px 12px 0px;
+}
+
+.main-nav a {
+  background-color: #555;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.main-nav a:hover, .main-nav a.active {
+  background-color: #713939;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+label {
+  display: none;
+}
+
+.search-form {
+  padding-top: 30px;
+}
+
+.photo-search {
+  width: 220px;
+  height: 30px;
+  padding-left: 6px;
+  color: #555;
+  font-weight: 300;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  vertical-align: top;
+  line-height: 30px;
+}
+
+.photo-search::placeholder {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: #000;
+}
+
+.search-button {
+  height: 31px;
+  width: 30px;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #555;
+  background-image: url("./images/search-indicator-magnifying-glass.svg");
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  background-position: 50% 50%;
+  cursor: pointer;
+  position: absolute;
+}
+
+.search-button:hover {
+  background-color: #713939;
+}
+
+.photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.loading {
+  display: block;
+  margin: 0 auto;
+}
+
+.photo {
+  flex-basis: 25%;
+  margin: 10px auto 10px auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.photo img {
+  display: block;
+  width: 220px;
+  height: 165px;
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+  border-radius: 3px;
+  border: 1px solid rgba(86,70,76,0.8);
+}
+
+.photo img:hover {
+  box-shadow: 0px 0px 6px 3px rgba(255,255,255,0.2);
+  border: 1px solid #713939;
+  animation: tilt 0.6s linear forwards;
+}
+
+@keyframes tilt {
+  0%   {transform: rotate(-2deg)}
+  25%  {transform: rotate(0deg)}
+  50%  {transform: rotate(2deg)}
+  100% {transform: rotate(0deg)}
 }
