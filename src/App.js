@@ -16,6 +16,9 @@ state = {
 
 // Fetches Flickr API, and loads object containing 16 images that match the keyword into photos state.
 performSearch = text => {
+  this.setState({
+    loading: true
+  });
   axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${text}&per_page=16&sort=relevance&content_type=1&format=json&nojsoncallback=1`)
   .then(response => {
     this.setState({
